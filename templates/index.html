@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101216"><title>Store Studio · Генератор видео</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="/static/preview.css?v=progress-1"><link rel="stylesheet" href="/static/publishing.css?v=quick-1">
+  <link rel="stylesheet" href="/static/style.css?v=ui-2">
+  <link rel="stylesheet" href="/static/preview.css?v=ui-2"><link rel="stylesheet" href="/static/publishing.css?v=ui-2">
 </head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -141,8 +141,8 @@
 <dialog id="publish-caption-dialog"><form id="publish-caption-form"><div class="dialog-heading"><h2>Параметры публикации</h2><button type="button" class="icon-button close-dialog" aria-label="Закрыть">×</button></div><label class="field">Описание и хештеги<textarea id="publish-caption" rows="6"></textarea></label><label class="field">Рекламный контент<select id="publish-brand"><option value="none">Без рекламной отметки</option><option value="own">Свой бизнес</option><option value="paid">Оплаченное партнёрство</option></select></label><label class="checkbox-line"><input id="publish-aigc" type="checkbox">Видео создано ИИ</label><label class="checkbox-line"><input id="publish-comment" type="checkbox">Разрешить комментарии</label><label class="checkbox-line"><input id="publish-duet" type="checkbox">Разрешить дуэты</label><label class="checkbox-line"><input id="publish-stitch" type="checkbox">Разрешить сшивание</label><p class="help">Настройки взаимодействия доступны в пределах разрешений выбранного аккаунта.</p><button type="submit" class="button primary full">Применить к видео</button></form></dialog>
 <dialog id="publish-preview-dialog"><div class="dialog-heading"><h2>Выбранное видео</h2><button type="button" class="icon-button close-dialog" aria-label="Закрыть">×</button></div><video id="publish-preview-video" controls playsinline></video><p class="help">В Studio показывается совместимая SDR-копия, если она есть. Отправляется исходный готовый файл.</p></dialog>
 
-<script src="/static/app.js?v=progress-1" defer></script>
-<script src="/static/preview.js?v=progress-1" defer></script>
+<script src="/static/app.js?v=ui-2" defer></script>
+<script src="/static/preview.js?v=ui-2" defer></script>
 <script src="/static/progress.js?v=1" defer></script>
 <script src="/static/publishing.js?v=quick-1" defer></script>
 </body></html>

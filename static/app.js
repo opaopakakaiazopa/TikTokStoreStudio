@@ -69,10 +69,12 @@ function fillSettings(config) {
   updateSummaries();
 }
 
+function paintRanges(root=document) {$$('input[type=range]',root).forEach(r=>{const min=Number(r.min||0),max=Number(r.max||100),v=Number(r.value);r.style.setProperty('--fill',max>min?((v-min)/(max-min)*100)+'%':'0%');});}
 function updateSummaries() {
   const config = formSettings();
   $$('[data-number-for]').forEach(input=>{if(document.activeElement!==input)input.value=config[input.dataset.numberFor];});
   $$('output[data-value]').forEach(item => item.textContent = `${config[item.dataset.value]}${item.dataset.suffix || ''}`);
+  paintRanges();
   $('#focus-controls').hidden = config.crop_mode !== 'cover';
   $('#progress-options').hidden = !config.progress_enabled;
   $('#texts-count').textContent = `${config.texts.length} вариантов`;
@@ -259,7 +261,7 @@ document.addEventListener('click', async event=>{
   if(event.target.closest('.close-dialog'))event.target.closest('dialog').close();
 });
 
-document.addEventListener('input',event=>{if(event.target.matches('[data-field],#texts-editor,#tags-editor')){if(event.target.dataset.field==='font_size' && Number($('[data-field="min_font_size"]').value)>Number(event.target.value))$('[data-field="min_font_size"]').value=event.target.value;markChanged();}});
+document.addEventListener('input',event=>{if(event.target.matches('input[type=range]'))paintRanges(document);if(event.target.matches('[data-field],#texts-editor,#tags-editor')){if(event.target.dataset.field==='font_size' && Number($('[data-field="min_font_size"]').value)>Number(event.target.value))$('[data-field="min_font_size"]').value=event.target.value;markChanged();}});
 document.addEventListener('change',event=>{
   if(event.target.matches('[data-source]')){if(event.target.checked)excluded.delete(event.target.dataset.source);else excluded.add(event.target.dataset.source);for(const kind of ['video','music'])$(`#selected-${kind}-count`).textContent=`· выбрано ${selected(kind).length}`;updateReadiness();if(typeof syncPreviewSources==='function')syncPreviewSources();}
 });
