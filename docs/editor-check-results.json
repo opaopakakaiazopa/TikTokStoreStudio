@@ -1,0 +1,7 @@
+{
+  "checks": 9,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "scope": "actual PNG geometry, tracking, line spacing, alignment, opacity/rotation, frame bounds, preview/export parity"
+}

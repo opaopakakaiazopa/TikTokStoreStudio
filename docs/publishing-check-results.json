@@ -1,0 +1,8 @@
+{
+  "checks": 21,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "network": "httpx.MockTransport only; no real TikTok calls",
+  "scope": "queue, deduplication, cooldown, OAuth/DPAPI, recovery, API transport"
+}

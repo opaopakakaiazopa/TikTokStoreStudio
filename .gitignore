@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+tools/
+logs/
+data/*.db*
+data/*.lock
+output/
+assets/backgrounds/*
+assets/music/*
+assets/fonts/*

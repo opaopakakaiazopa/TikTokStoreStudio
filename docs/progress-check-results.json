@@ -1,0 +1,8 @@
+{
+  "checks": 8,
+  "passed": true,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "scope": "80% easing, actual FFmpeg alpha frames, CPU/NVIDIA HDR10 exports and mastering metadata"
+}

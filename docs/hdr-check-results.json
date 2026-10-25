@@ -1,0 +1,10 @@
+{
+  "passed": [
+    "HDR export is enforced even when a client requests SDR",
+    "real-font layers change with typography and position, with transparent backgrounds",
+    "203-nit source: HEVC Main10/PQ/BT.2020, measured luminance preserved; text ~203 nits; browser copy available",
+    "1000-nit source: HEVC Main10/PQ/BT.2020, measured luminance preserved; text ~203 nits; browser copy available"
+  ],
+  "count": 4,
+  "checked_at": "2026-10-17T21:19:54.045314+00:00"
+}

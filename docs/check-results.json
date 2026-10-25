@@ -1,0 +1,21 @@
+{
+  "passed": [
+    "isolated server and worker start",
+    "Unicode paths, material analysis and settings persistence",
+    "insufficient hashtags and text overflow rejected before rendering",
+    "five distinct texts, non-overlapping source segments, real previews",
+    "edit text and regenerate one job",
+    "preset saved",
+    "queue pause completes the current video and holds the remaining four",
+    "cancel, retry and sequential rendering of five complete videos",
+    "all outputs: 13–15 seconds, 720×1280, HEVC HDR10 + AAC, five unique tags, TXT captions",
+    "video streaming and complete batch ZIP export",
+    "multipart upload, Full HD export, fit with black bars, silent source and repeated short music",
+    "active cancellation removes the incomplete output",
+    "forced server exit stops FFmpeg; restart preserves results and waits for explicit resume",
+    "graceful shutdown endpoint stops the server and rendering worker"
+  ],
+  "count": 14,
+  "checked_at": "2026-10-17T20:20:10.674407+00:00",
+  "materials": "generated synthetic media, not user footage"
+}
