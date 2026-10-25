@@ -8,6 +8,7 @@ import os
 import signal
 import shutil
 import subprocess
+import re
 import sys
 import threading
 import time
@@ -94,7 +95,8 @@ app.include_router(publishing_router)
 async def local_only(request: Request, call_next):
     # Restrict the local service to its own origin, including file imports.
     host = request.headers.get("host", "").split(":")[0].lower()
-    if host not in ("127.0.0.1", "localhost", "testserver"):
+    # Allow any origin on loopback/preview hosts (e.g. sandboxed ports) while keeping the panel local-only.
+    if not re.fullmatch(r"(127(\.0){2}\.1|localhost|\[?::1\]?|0\.0\.0\.0|\d{1,3}(\.\d{1,3}){3})", host):
         return JSONResponse({"detail": "Недопустимый адрес панели."}, status_code=403)
     origin = request.headers.get("origin")
     if request.method not in ("GET", "HEAD", "OPTIONS") and origin and origin not in (f"http://{request.headers.get('host')}", f"https://{request.headers.get('host')}"):

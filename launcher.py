@@ -1,6 +1,7 @@
 """Start one local server and open the studio in the default browser."""
 from pathlib import Path
 import json
+import os
 import socket
 import threading
 import time
@@ -35,4 +36,5 @@ if __name__ == "__main__":
         threading.Thread(target=open_when_ready, daemon=True).start()
         print("TikTok Store Studio: " + URL)
         print("Keep this window open. Press Ctrl+C to stop.")
-        uvicorn.run("app:app", host="127.0.0.1", port=8765, log_level="info", timeout_graceful_shutdown=5, app_dir=str(Path(__file__).resolve().parent))
+        host = os.environ.get("STORE_STUDIO_HOST", "127.0.0.1")
+        uvicorn.run("app:app", host=host, port=8765, log_level="info", timeout_graceful_shutdown=5, app_dir=str(Path(__file__).resolve().parent))
